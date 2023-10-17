@@ -1,3 +1,3 @@
 # Objectif du project
 
-S'entrainer et en algo php 
+S'entrainer en algo php 
