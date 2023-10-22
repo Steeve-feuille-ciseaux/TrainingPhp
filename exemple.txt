@@ -1,0 +1,8 @@
+git init
+git config --global user.name *pseudo*
+git config --global user.email *adress mail*
+git add *file/folder*
+git commit -m *name commit*
+git remote -v -> connaitre les noms de remote à utiliser
+git branch -> connaitre les noms de branch à utiliser
+git push *nom de remote* *nom de la branch local*:*nom de la branch du repo* -> push un commit avec une branch existant où non dans le repo
