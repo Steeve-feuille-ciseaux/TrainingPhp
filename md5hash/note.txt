@@ -1,0 +1,32 @@
+$filename = 'myfile.txt'; // Remplacez cela par le chemin de votre fichier.
+$result_set = getResultSet(); // Obtenez la valeur $result_set de votre source de données.
+
+if (filemtime($filename) > $result_set['filemtime']) {
+    // Le fichier a été modifié depuis la date stockée dans $result_set.
+    // Vous pouvez effectuer les actions nécessaires ici.
+} else {
+    // Le fichier n'a pas été modifié depuis la date stockée dans $result_set.
+    // Vous pouvez gérer ce cas ici.
+}
+
+
+$nomFichier = 'chemin/vers/votre/fichier.txt'; // Remplacez cela par le chemin de votre fichier.
+
+// Obtenez la date de modification du fichier en tant que timestamp Unix.
+$dateModification = filemtime($nomFichier);
+
+if ($dateModification !== false) {
+    echo 'Le fichier a été modifié pour la dernière fois le : ' . date('Y-m-d H:i:s', $dateModification);
+} else {
+    echo 'Impossible d'obtenir la date de modification du fichier.';
+}
+
+$file_path = 'chemin/vers/votre/fichier.txt'; // Remplacez cela par le chemin de votre fichier TXT.
+
+$md5_hash = md5_file($file_path);
+
+if ($md5_hash !== false) {
+    echo 'Le hachage MD5 du fichier est : ' . $md5_hash;
+} else {
+    echo 'Une erreur s\'est produite lors du hachage MD5 du fichier.';
+}
