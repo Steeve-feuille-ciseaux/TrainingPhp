@@ -1,3 +1,5 @@
+METHODE 1
+
 $filename = 'myfile.txt'; // Remplacez cela par le chemin de votre fichier.
 $result_set = getResultSet(); // Obtenez la valeur $result_set de votre source de données.
 
@@ -9,24 +11,17 @@ if (filemtime($filename) > $result_set['filemtime']) {
     // Vous pouvez gérer ce cas ici.
 }
 
+METHODE 2
 
-$nomFichier = 'chemin/vers/votre/fichier.txt'; // Remplacez cela par le chemin de votre fichier.
+$file_path = '../backup_file1.tar.gz'; // Remplacez cela par le chemin de votre fichier.
+$previous_mtime = 1234567890; // Remplacez cela par la date de modification précédemment stockée.
 
-// Obtenez la date de modification du fichier en tant que timestamp Unix.
-$dateModification = filemtime($nomFichier);
+$current_mtime = filemtime($file_path);
 
-if ($dateModification !== false) {
-    echo 'Le fichier a été modifié pour la dernière fois le : ' . date('Y-m-d H:i:s', $dateModification);
+if ($current_mtime > $previous_mtime) {
+    // Le fichier a été modifié depuis la date stockée dans $previous_mtime.
+    echo "Le fichier a été modifié.";
 } else {
-    echo 'Impossible d'obtenir la date de modification du fichier.';
-}
-
-$file_path = 'chemin/vers/votre/fichier.txt'; // Remplacez cela par le chemin de votre fichier TXT.
-
-$md5_hash = md5_file($file_path);
-
-if ($md5_hash !== false) {
-    echo 'Le hachage MD5 du fichier est : ' . $md5_hash;
-} else {
-    echo 'Une erreur s\'est produite lors du hachage MD5 du fichier.';
+    // Le fichier n'a pas été modifié depuis la date stockée dans $previous_mtime.
+    echo "Le fichier n'a pas été modifié.";
 }

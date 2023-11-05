@@ -16,3 +16,4 @@ if ($dateModification !== false) {
 } else {
     echo 'Impossible d\'obtenir la date de modification du fichier.';
 }
+
