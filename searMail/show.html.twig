@@ -1,0 +1,14 @@
+<form {{ attributes }}>
+    {{ form.form_build_id }}
+    {{ form.form_token }}
+    {{ form.form_id }}
+
+    {{ form.find_mail }}
+
+    {{ form.actions }}
+
+    {# Afficher le résultat ici #}
+    {% if result_message %}
+        <p>{{ result_message }}</p>
+    {% endif %}
+</form>
